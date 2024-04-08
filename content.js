@@ -1,4 +1,8 @@
+var day = 0;
+let count;
+
 function block(pageName) {
+    
     const div = document.createElement('div');
     // document.body.innerHTML = "<div></div>"
 
@@ -15,8 +19,12 @@ function block(pageName) {
     div.style.textAlign = "center";
     div.style.justifySelf = "center";
     div.style.alignSelf = "center";
-    div.style.padding = "150px 0px 0px 0px"
-    div.textContent = `Stop ${pageName}. WORK!`;
+    div.style.padding = "150px 0px 0px 0px";
+    day = localStorage.getItem("cantidad");
+    count = parseInt(day)+1;
+    // count = 0;
+    localStorage.setItem("cantidad",count);
+    div.textContent = `Stop ${pageName} (${count}). WORK!`;
     const cuerpo = document.body;
     cuerpo.appendChild(div);
 
@@ -43,3 +51,4 @@ switch (window.location.hostname) {
         block("Porn");
         break;
 }
+
