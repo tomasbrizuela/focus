@@ -1,6 +1,23 @@
 var day = 0;
 let count;
 
+let toggle = document.querySelector('.toggle');
+let btn = document.querySelector('button');
+let mode = true;
+let blocker = true;
+
+btn.addEventListener('click',function(){
+    if(mode===true){
+        toggle.style.transform = "translate(80px,0px)";
+        toggle.textContent = "I";
+        mode = false;
+    } else {
+        toggle.style.transform = "translate(0px,0px)";
+        toggle.textContent = "O";
+        mode = true;
+    };
+})
+
 function block(pageName) {
     
     const div = document.createElement('div');
@@ -29,7 +46,6 @@ function block(pageName) {
     cuerpo.appendChild(div);
 
 }
-
 
 switch (window.location.hostname) {
     case "www.youtube.com":
