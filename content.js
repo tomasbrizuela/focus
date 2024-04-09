@@ -3,17 +3,21 @@ let count;
 
 let toggle = document.querySelector('.toggle');
 let btn = document.querySelector('button');
+let lock = document.querySelector('#lock');
+let unlock = document.querySelector('#unlock');
 let mode = true;
 let blocker = true;
 
 btn.addEventListener('click',function(){
     if(mode===true){
         toggle.style.transform = "translate(80px,0px)";
-        toggle.textContent = "I";
         mode = false;
+        lock.style.display = "none";
+        unlock.style.display = "block";
     } else {
         toggle.style.transform = "translate(0px,0px)";
-        toggle.textContent = "O";
+        lock.style.display = "block";
+        unlock.style.display = "none";
         mode = true;
     };
 })
